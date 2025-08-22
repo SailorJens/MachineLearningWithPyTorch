@@ -2,7 +2,7 @@
 
 
 import sys
-from python_environment_check import check_packages
+# from python_environment_check import check_packages
 import numpy as np
 import os
 import pandas as pd
@@ -27,12 +27,12 @@ sys.path.insert(0, '..')
 
 
 
-d = {
-    'numpy': '1.21.2',
-    'matplotlib': '3.4.3',
-    'pandas': '1.3.2'
-}
-check_packages(d)
+# d = {
+#     'numpy': '1.21.2',
+#     'matplotlib': '3.4.3',
+#     'pandas': '1.3.2'
+# }
+# check_packages(d)
 
 
 # # Chapter 2 - Training Machine Learning Algorithms for Classification
@@ -135,7 +135,7 @@ class Perceptron:
         """
         rgen = np.random.RandomState(self.random_state)
         self.w_ = rgen.normal(loc=0.0, scale=0.01, size=X.shape[1])
-        self.b_ = np.float_(0.)
+        self.b_ = np.float64(0.)
         
         self.errors_ = []
 
@@ -351,7 +351,7 @@ class AdalineGD:
         """
         rgen = np.random.RandomState(self.random_state)
         self.w_ = rgen.normal(loc=0.0, scale=0.01, size=X.shape[1])
-        self.b_ = np.float_(0.)
+        self.b_ = np.float64(0.)
         self.losses_ = []
 
         for i in range(self.n_iter):
@@ -539,7 +539,7 @@ class AdalineSGD:
         """Initialize weights to small random numbers"""
         self.rgen = np.random.RandomState(self.random_state)
         self.w_ = self.rgen.normal(loc=0.0, scale=0.01, size=m)
-        self.b_ = np.float_(0.)
+        self.b_ = np.float64(0.)
         self.w_initialized = True
         
     def _update_weights(self, xi, target):
